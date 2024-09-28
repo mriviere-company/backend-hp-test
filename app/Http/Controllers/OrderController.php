@@ -37,7 +37,7 @@ readonly class OrderController
         ->get();
 
         if ($orders->isEmpty()) {
-            return response()->json(['message' => 'No order found'], 200);
+            return response()->json(['message' => 'No order found']);
         }
 
         return response()->json($orders);
@@ -161,10 +161,8 @@ readonly class OrderController
 
         $order = Order::findOrFail($id);
 
-        // Delete related OrderItems first
         $order->orderItems()->delete();
 
-        // Then delete the Order
         $order->delete();
 
         return response()->json(['message' => 'Order deleted successfully']);
