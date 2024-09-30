@@ -30,7 +30,9 @@ php artisan test
 - Add tests for all models
 - Add tests for all routes
 - Add CSRF with cors to POST|PUT|DELETE routes
-- Deploy it on prod
 
 # Warning :
 'allowed_origins' => ['*'] in config/cors.php must have an array of whitelist url and not *
+
+# Backend in prod :
+https://backend.areauniverse.fr/
